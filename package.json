@@ -8,6 +8,7 @@
     "bin": "./build/bin"
   },
   "scripts": {
+    "heroku-prebuild": "npm install --only=dev",
     "build": "tsc",
     "test": "mocha --exit -r ts-node/register -r dotenv/config ./test/**/*.test.ts",
     "coverage": "nyc  --reporter=lcov --reporter=text  npm run test",
