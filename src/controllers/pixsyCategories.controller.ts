@@ -3,7 +3,7 @@ import {log} from '../log'
 
 import {photo}  from '../config';
 
-export async function getPixsyCategoriesController(req: Request, res: Response, _next: NextFunction) {
+export async function getPixsyCategoriesController(_req: Request, res: Response, _next: NextFunction) {
 
     // const { offset=0, limit = 10, search } = req.query
 try {
