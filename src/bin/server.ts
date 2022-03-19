@@ -6,6 +6,7 @@ import { Server } from "http";
 
 import { log } from "../log";
 import { pixsyRouter } from '../routes';
+import path = require('path')
 //////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Server initialization and middlewares
@@ -27,6 +28,7 @@ app.use(helmet());
 app.use(cors());
 app.use(json());
 
+app.use(express.static(path.resolve(__dirname, "../public/client/build")))
 
 app.get(`${app.locals.baseUri}/ping`, (_req: express.Request, res: express.Response) => {
   res.sendStatus(200);
