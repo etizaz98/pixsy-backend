@@ -1,0 +1,71 @@
+{
+  "name": "pixsy-api",
+  "version": "1.0.0",
+  "description": "Pixsy API Microservices",
+  "main": "./build/bin/server.js",
+  "typings": "./build/bin/server.d.ts",
+  "directories": {
+    "bin": "./build/bin"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --exit -r ts-node/register -r dotenv/config ./test/**/*.test.ts",
+    "coverage": "nyc  --reporter=lcov --reporter=text  npm run test",
+    "lint": "tslint --project ./ -t verbose",
+    "start": "ts-node-dev -r dotenv/config ./src/bin/server.ts | bunyan -l trace"
+  },
+  "nyc": {
+    "all": true,
+    "include": "src",
+    "exclude": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "author": "Etizaz Ahsan <etizaz7ahsan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "bunyan": "1.8.12",
+    "bunyan-elasticsearch": "1.0.1",
+    "cors": "2.8.5",
+    "express": "4.16.3",
+    "helmet": "3.22.0",
+    "joi": "14.3.1",
+    "superagent": "4.0.0-beta.5"
+  },
+  "devDependencies": {
+    "@types/browserify": "12.0.33",
+    "@types/bunyan": "1.8.4",
+    "@types/chai": "4.1.2",
+    "@types/chai-http": "3.0.4",
+    "@types/cors": "2.8.5",
+    "@types/dotenv": "4.0.2",
+    "@types/express": "4.11.1",
+    "@types/helmet": "0.0.45",
+    "@types/joi": "^14.3.2",
+    "@types/mocha": "2.2.48",
+    "@types/node": "14.10.3",
+    "@types/sinon": "^10.0.2",
+    "aglio": "2.3.0",
+    "browserify": "16.1.1",
+    "chai": "4.1.2",
+    "chai-http": "4.0.0",
+    "dotenv": "5.0.0",
+    "mocha": "5.0.1",
+    "sinon": "^11.1.2",
+    "testcontainers": "^7.18.2",
+    "ts-node": "5.0.1",
+    "ts-node-dev": "1.0.0-pre.18",
+    "tsify": "3.0.4",
+    "tslib": "^2.3.1",
+    "tslint": "5.9.1",
+    "typedoc": "0.11.1",
+    "typescript": "4.0.2"
+  }
+}
